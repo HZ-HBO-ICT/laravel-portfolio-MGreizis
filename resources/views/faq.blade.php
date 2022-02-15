@@ -24,32 +24,19 @@
 </header>
 
 <main>
-
-    <button class="accordion">How can you print a document from your laptop at HZ?</button>
-    <panel class="panel">
-        <p>By simply connecting to one of the printers via Bluetooth or by going to <a href="print.hz.nl" class="mainlinks">print.hz.nl</a></p>
-    </panel>
-
-    <button class="accordion">How can you scan a document and send it to your laptop at HZ?</button>
-    <panel class="panel">
-        <p>Using the same printer you can scan your paper and it should be added to Your PC if you did it correctly.</p>
-    </panel>
-
-    <button class="accordion">What to do when you are feeling sick or show symptoms of COVID-19?</button>
-    <panel class="panel">
-        <p>Contact the teachers or the school helpdesk (helpdesk@hz.nl) and stay at home. Follow the lessons on BBB to avoid falling behind everybody else.</p>
-    </panel>
-
-    <button class="accordion">How can you book a space in one of the wings?</button>
-    <panel class="panel">
-        <p>After logging in to the <a href="hzuniversity.topdesk.net" class="mainlinks">HZ SelfService portal</a>, it should be pretty simple after that.</p>
-    </panel>
-
-    <button class="accordion">How to change payment details for Study Year payment?</button>
-    <panel class="panel">
-        <p>You have to contact the HZ Financial Office (fin@hz.nl). You can also contact the International Office (internationaloffice@hz.nl).</p>
-    </panel>
-
+    <h1>Frequently Asked Questions</h1>
+    <ul>
+        @foreach($faq as $faqItem)
+            <button class="accordion">{{ $faqItem->question }}</button>
+        @endforeach
+    </ul>
+    <ul>
+        @foreach($faq as $faqItem)
+            <panel class="panel">
+            <li>{{ $faqItem->answer }}</li>
+            </panel>
+        @endforeach
+    </ul>
 </main>
 
 <footer>
